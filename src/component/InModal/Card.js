@@ -103,13 +103,13 @@ import { data } from './data'
 // export default Flipcard;
 
 function Flipcard() {
-  const [cardpage,setCardpage] = useState(1)
+  // const [cardpage,setCardpage] = useState(1)
   
-  function nextPage() {
-    return(
-      setCardpage
-    )
-  }
+  // function nextPage() {
+  //   return(
+  //     setCardpage
+  //   )
+  // }
   return (
     <div className='ModalCard'>
       
@@ -118,7 +118,7 @@ function Flipcard() {
       <div className='CardContainer'>
         <div className='cardview'>
         
-                    {/* <div className='Card Card1'>
+          <div className='Card Card1'>
             <div className='fr'>fff</div>
             <div className='bc'>dddd</div>
           </div>
@@ -129,7 +129,7 @@ function Flipcard() {
           <div className='Card Card3'>
             <div className='fr'></div>
             <div className='bc'></div>
-          </div> */}
+          </div>
         </div>
       </div>
 

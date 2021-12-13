@@ -36,6 +36,12 @@ function DemoApp() {
   return (
     <>
       <div className='demo-app'>
+        <div className="background-container">
+          {/* <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt=""/> */}
+          <div className="stars"></div>
+          <div className="twinkling"></div>
+          {/* <div className="clouds"></div> */}
+        </div>
         <div className='demo-app-main'>
           <FullCalendar
             // contentHeight={400}
@@ -87,7 +93,7 @@ function DemoApp() {
                 height: '100%',
                 position: 'absolute',
                 backgroundColor: 'gray',
-                opacity: '0.2',
+                opacity: '0.55',
                 zIndex: 2,
               }}
               onClick={() => setToggle(false)}

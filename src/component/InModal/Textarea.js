@@ -7,11 +7,13 @@ function TextArea() {
     textArea: {
       border: 8,
       boxShadow: 'none',
-      margin: 5,
+      margin: 6,
       resize: 'none',
       ariaHidden: 'true',
       width: '80%',
-      height: '70%',
+      height: '80%',
+      
+      
     },
   }
   function getData(val) {

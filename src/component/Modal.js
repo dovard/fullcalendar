@@ -9,16 +9,16 @@ function Modal({ date, toggle }) {
   console.log(date)
   return (
     <div className={`ModalBack ${toggle ? '' : 'hidden'}`}>
-      <div className='title'>{date}</div>
-      <div className='body_card'>
-        <Card />
+      <div className='title'>
+        <p>{date}</p></div>
+        <div className='body_card'>
+          <Card />
+        </div>
+        <div className="body_textarea">
+          <TextArea />
+          <div><button className="saveBtn">저장</button></div>
+        </div>
       </div>
-      <div className="body_textarea">
-        <div>일기</div>
-        <TextArea />
-        <div><button className="saveBtn">저장</button></div>
-      </div>
-    </div>
   )
 }
 
