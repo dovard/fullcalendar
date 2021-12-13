@@ -1,6 +1,6 @@
 import React from 'react'
 import './Card.css'
-import { data } from './data'
+// import { data } from './data'
 
 // const MainContainer = styled.div`
 //   position: absolute;

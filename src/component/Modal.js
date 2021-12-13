@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Modal.css'
 import Card from './InModal/Card'
 // import { MentionsInput, Mention } from 'react-mentions'
@@ -10,16 +10,32 @@ function Modal({ date, toggle }) {
   return (
     <div className={`ModalBack ${toggle ? '' : 'hidden'}`}>
       <div className='title'>
-        <p>{date}</p></div>
-        <div className='body_card'>
-          <Card />
-        </div>
-        <div className="body_textarea">
-          <TextArea />
-          <div><button className="saveBtn">저장</button></div>
-        </div>
+        <p>{date}</p>
       </div>
+      <div className='body_card'>
+        <Card />
+      </div>
+      <div className='body_textarea'>
+        <TextArea />
+        {/* <div className="saveBtn" onClick={SaveBtn}>저장</div> */}
+        <SaveBtn />
+      </div>
+    </div>
   )
 }
 
 export default Modal
+
+function SaveBtn() {
+  const [showResult, setShowResult] = useState(false)
+  const Savediary = () => setShowResult(true)
+
+  return (
+    <div>
+      <div className='diary-save' onClick={Savediary}>
+        저장
+      </div>
+      {showResult && <Results />}
+    </div>
+  )
+}

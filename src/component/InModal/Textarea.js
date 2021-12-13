@@ -13,7 +13,7 @@ function TextArea() {
       width: '80%',
       height: '80%',
       
-      
+
     },
   }
   function getData(val) {
@@ -33,5 +33,16 @@ function TextArea() {
     </>
   )
 }
-
 export default TextArea
+
+
+
+function Results() {
+  return (
+    <div>
+      <div className="diary-result">{mention}</div>
+    </div>
+  )
+}
+
+
