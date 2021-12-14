@@ -2,11 +2,23 @@ import React, { useState } from 'react'
 import './Modal.css'
 import Card from './InModal/Card'
 // import { MentionsInput, Mention } from 'react-mentions'
-import TextArea from './InModal/Textarea'
+import TextArea, { DiarySaveBtn } from './InModal/Textarea'
+
+import Diary from './InModal/Diary'
 // import { data } from '../data'
+import styled from 'styled-components'
 
 function Modal({ date, toggle }) {
   console.log(date)
+
+  const [showResult, setShowResult] = useState(false)
+  const Savediary = () => {
+    setShowResult(true)
+  }
+
+  const [showTextarea, setShowTextarea] = useState(true)
+  const ShowupTextarea = () => setShowTextarea(false)
+  const [mention, setMention] = useState(null)
   return (
     <div className={`ModalBack ${toggle ? '' : 'hidden'}`}>
       <div className='title'>
@@ -16,9 +28,21 @@ function Modal({ date, toggle }) {
         <Card />
       </div>
       <div className='body_textarea'>
-        <TextArea />
+        {!showResult && (
+          <>
+            <TextArea setMention={setMention} />
+            <DiarySaveBtn className='diary-save' onClick={Savediary}>
+              저장fd
+            </DiarySaveBtn>
+          </>
+        )}
+
+        {showResult && (
+          <Diary setShowResult={setShowResult} mention={mention} />
+        )}
+
         {/* <div className="saveBtn" onClick={SaveBtn}>저장</div> */}
-        <SaveBtn />
+        {/* <SaveBtn /> */}
       </div>
     </div>
   )
@@ -26,16 +50,19 @@ function Modal({ date, toggle }) {
 
 export default Modal
 
-function SaveBtn() {
-  const [showResult, setShowResult] = useState(false)
-  const Savediary = () => setShowResult(true)
+// function SaveBtn() {
+//   const [showResult, setShowResult] = useState(false)
+//   const Savediary = () => setShowResult(true)
 
-  return (
-    <div>
-      <div className='diary-save' onClick={Savediary}>
-        저장
-      </div>
-      {showResult && <Results />}
-    </div>
-  )
-}
+//   const [showTextarea, setShowTextarea] = useState(true)
+//   const ShowupTextarea = () =>setShowTextarea(false)
+
+//   return (
+//     <div>
+//       <DiarySaveBtn className='diary-save' onClick={Savediary}>
+//         저장fd
+//       </DiarySaveBtn>
+//       {showResult && <Results /> }
+//     </div>
+//   )
+// }

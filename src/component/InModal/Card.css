@@ -1,8 +1,5 @@
-.ModalCard {
+/* .ModalCard {
   display: flex;
-  /* position: relative; */
-  /* left: 50%;
-  transform: translate(-50%,0); */
   width: 100%;
   height: 100%;
   flex-direction: row;
@@ -10,26 +7,18 @@
   justify-content: space-around;
   box-sizing: border-box;
   padding: 15px;
+  } */
 
-  /* @media screen and (max-width: 960px) {
-    width: 300vw;
-    align-items: left;
-    tranform : transition 0.5s */
-
-
-  }
-
-.CardContainer {
+/* .CardContainer {
   text-align: center;
   width: 80%;
   height: 100%;
   top: 0;
   left: 0;
   display: flex;
+} */
 
-}
-
-.cardview {
+.Cardview {
   width: 100%;
   height: 100%;
   /* display: table; */
@@ -55,7 +44,7 @@
   
   
 }
-
+/* 
 
 .Card:hover {
   transform: rotateY(180deg);
@@ -72,14 +61,14 @@
   color: rgb(255, 255, 255);
   text-align: center;
   box-shadow: 7px 7px 2px 1px rgba(125,125,125,0.7);
-  
+   */
   /* @media screen and (max-width: 720px) {
     width: 100%;
     background-color: tomato;
     height: 100%;
     transform: translate(200%,0); */
 /* } */
-}
+/* }
 
 .bc {
   position: absolute;
@@ -89,7 +78,7 @@
   backface-visibility: hidden;
   background: rgb(182, 181, 181);
   color: rgb(255, 255, 255);
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); */
 
   /* @media (max-width: 960px) {
     width: 100%;
@@ -97,8 +86,8 @@
     height: 100%;
     transform: translate(200%,0);
 } */
-}
 
+/* 
 .Btn {
   visibility: hidden;
   padding: 0;
@@ -109,15 +98,7 @@
 
 
 @media screen and (max-width: 900px){
-  .ModalCard {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    position: relative;
-    align-items: center;
-
-
-  }
+  
   
   .Btn {
     visibility: visible;
@@ -141,7 +122,6 @@
   }
   
   .Card {
-    /* margin: 0 10px; */
     width: 100%;
     height: 90%;
     background-color: #00e;
@@ -156,4 +136,4 @@
   .bc {
     width: 80%;
   }
-}
+} */
