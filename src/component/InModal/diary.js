@@ -35,21 +35,30 @@ const DiaryModifyBtn = styled.div`
   cursor: pointer;
 `
 
-function Diary({ mention, setShowResult }) {
-  // const [showResult, setShowResult] = useState(false)
+function Diary({ mention, setShowResult, setCheck }) {
   // const Savediary = () => setShowResult(true)
+
+  const callData = () => {
+    setCheck(true)
+  }
 
   return (
     <>
       <DiaryResults className='diary-result'>{mention}</DiaryResults>
       <div>
-        <DiaryModifyBtn onClick={() => setShowResult(false)}>
+        <DiaryModifyBtn
+          onClick={() => {
+            setShowResult(false)
+            callData(true)
+          }}
+        >
           수정
         </DiaryModifyBtn>
         <DiaryDelBtn>삭제</DiaryDelBtn>
+        {check && <p>{window.localStorage.getItem('mention')}</p>}
       </div>
     </>
-  )
+     )
 }
 
 export default Diary

@@ -8,8 +8,15 @@ import Diary from './InModal/Diary'
 // import { data } from '../data'
 import styled from 'styled-components'
 
-function Modal({ date, toggle }) {
-  console.log(date)
+function Modal({ date, toggle, setDiarycontent, saveData }) {
+  /*------*/
+  const [check, setCheck] = useState(false)
+
+  // const callData = () => {
+  //   setCheck(true);
+  // };
+
+  /*---*/
 
   const [showResult, setShowResult] = useState(false)
   const Savediary = () => {
@@ -19,6 +26,7 @@ function Modal({ date, toggle }) {
   const [showTextarea, setShowTextarea] = useState(true)
   const ShowupTextarea = () => setShowTextarea(false)
   const [mention, setMention] = useState(null)
+
   return (
     <div className={`ModalBack ${toggle ? '' : 'hidden'}`}>
       <div className='title'>
@@ -31,7 +39,13 @@ function Modal({ date, toggle }) {
         {!showResult && (
           <>
             <TextArea setMention={setMention} />
-            <DiarySaveBtn className='diary-save' onClick={Savediary}>
+            <DiarySaveBtn
+              className='diary-save'
+              onClick={() => {
+                Savediary
+                saveData
+              }}
+            >
               저장fd
             </DiarySaveBtn>
           </>
@@ -40,7 +54,6 @@ function Modal({ date, toggle }) {
         {showResult && (
           <Diary setShowResult={setShowResult} mention={mention} />
         )}
-
         {/* <div className="saveBtn" onClick={SaveBtn}>저장</div> */}
         {/* <SaveBtn /> */}
       </div>

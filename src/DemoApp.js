@@ -36,11 +36,9 @@ function DemoApp() {
   return (
     <>
       <div className='demo-app'>
-        <div className="background-container">
-          {/* <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt=""/> */}
-          <div className="stars"></div>
+        <div className='background-container'>
+          <div className='stars'></div>
           <div className="twinkling"></div>
-          {/* <div className="clouds"></div> */}
         </div>
         <div className='demo-app-main'>
           <FullCalendar

@@ -3,6 +3,7 @@ import React, { Component, useState } from 'react'
 import styled from 'styled-components'
 import Diary from './Diary'
 import './Textarea.css'
+
 export const DiarySaveBtn = styled.div`
   margin: 10px;
   padding: 10px 20px;
@@ -30,9 +31,14 @@ function TextArea({ setMention }) {
       color: 'white',
     },
   }
-
   function getData(val) {
     setMention(val.target.value)
+    setCheck(false)
+  }
+
+  const saveData = () => {
+    const userObj = { name: mention }
+    window.localStorage.setItem('mention', JSON.stringify(userObj))
   }
 
   // const [showResult, setShowResult] = useState(false)
@@ -44,8 +50,9 @@ function TextArea({ setMention }) {
   return (
     <>
       <textarea
+        name='hihihi'
         className='input'
-        // value="mention"
+        value='mention'
         type='text'
         rows='10'
         cols='90'
